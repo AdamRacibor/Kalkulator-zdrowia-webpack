@@ -1,0 +1,404 @@
+/*Variables for class*/
+
+$main_color: #2ed573;
+$main_font: "Bowlby One SC", cursive;
+$second_font: "Lato", sans-serif;
+
+/*Variables for media query*/
+
+$large_desktop_breakpoint: 1200px;
+$desktop_breakpoint: 992px;
+$tablet_breakpoint: 768px;
+$phone_breakpoint: 576px;
+
+@mixin phone {
+  @media screen and (min-width: #{$phone_breakpoint}) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media screen and (min-width: #{$tablet_breakpoint}) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media screen and (min-width: #{$desktop_breakpoint}) {
+    @content;
+  }
+}
+@mixin large-desktop {
+  @media screen and (min-width: #{$large_desktop_breakpoint}) {
+    @content;
+  }
+}
+
+/*Mixin*/
+
+@mixin flexbox-setting($fd, $jc, $ai) {
+  flex-direction: $fd;
+  justify-content: $jc;
+  align-items: $ai;
+}
+
+/*Extend*/
+
+%box-setting {
+  width: 100%;
+  min-height: 100vh;
+}
+%heading-setting {
+  width: 100%;
+  font-family: $main_font;
+  font-size: 35px;
+  color: $main_color;
+  text-align: center;
+  margin: 6% 0;
+  @include tablet {
+    font-size: 38px;
+  }
+}
+%subheading-setting {
+  @extend %heading-setting;
+  font-size: 28px;
+  @include tablet {
+    font-size: 31px;
+  }
+}
+%button-setting {
+  background: none;
+  border: none;
+}
+
+/*Basic settings*/
+
+img {
+  width: 100%;
+  height: auto;
+}
+figure {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*Ancillary classes*/
+
+.hidden {
+  display: none;
+}
+.show {
+  display: flex;
+}
+
+/*Main styles*/
+
+.main {
+  width: 100%;
+  padding: 0 10px;
+  @include tablet {
+    padding: 0 30px;
+  }
+  @include desktop {
+    padding: 0 60px;
+  }
+  @include large-desktop {
+    width: 1200px;
+    margin: 0 auto;
+  }
+  .header {
+    @extend %box-setting;
+    @include flexbox-setting(column, center, center);
+    &__heading {
+      @extend %heading-setting;
+      line-height: 35px;
+      margin: 0;
+    }
+    &__subheading {
+      @extend %subheading-setting;
+      color: #ff4757;
+      line-height: 25px;
+      margin: 0;
+    }
+    &__btn {
+      @extend %button-setting;
+      padding: 10px 40px;
+      border: 2px solid #000000;
+      font-family: $second_font;
+      font-size: 16px;
+      margin-top: 20px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      &:hover {
+        cursor: pointer;
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+          0 10px 10px rgba(0, 0, 0, 0.22);
+      }
+      @include tablet {
+        font-size: 18px;
+      }
+    }
+  }
+  .section-first-step {
+    @extend %box-setting;
+    @include flexbox-setting(column, flex-start, flex-start);
+    @include tablet {
+      justify-content: center;
+      align-items: center;
+    }
+    &__heading {
+      @extend %heading-setting;
+    }
+    .wrapper {
+      width: 100%;
+      display: flex;
+      @include flexbox-setting(column, center, center);
+      @include tablet {
+        flex-direction: row;
+        justify-content: space-around;
+      }
+      @include desktop {
+        justify-content: center;
+        align-items: center;
+      }
+      .button-sex {
+        @extend %button-setting;
+        margin-top: 4%;
+        margin-bottom: 8%;
+        font-size: 24px;
+        color: #2276bc;
+        font-family: $second_font;
+        &:nth-child(2) {
+          color: #ee8eb4;
+          @include tablet {
+            width: 145px;
+          }
+        }
+        @include tablet {
+          width: 250px;
+        }
+        @include desktop {
+          margin-left: 10%;
+          margin-right: 10%;
+        }
+      }
+    }
+  }
+  .section-second-step {
+    @extend %box-setting;
+    @include flexbox-setting(column, flex-start, center);
+    @include tablet {
+      justify-content: center;
+      align-items: center;
+    }
+    &__heading {
+      @extend %heading-setting;
+    }
+    &__subheading {
+      @extend %subheading-setting;
+      margin: 0;
+      margin-top: 6%;
+      @include desktop {
+        margin-top: 10%;
+      }
+    }
+    .form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      .wrapper {
+        display: flex;
+        width: 100%;
+        margin-top: 6%;
+        @include flexbox-setting(column, center, center);
+        @include desktop {
+          flex-direction: row;
+          justify-content: space-around;
+          margin-top: 3%;
+        }
+        &__label {
+          display: flex;
+          width: 100%;
+          padding: 0 15px;
+          margin-bottom: 6%;
+          font-family: $second-font;
+          @include flexbox-setting(column, flex-start, flex-start);
+          @include phone {
+            width: 500px;
+          }
+          @include desktop {
+            width: 280px;
+            margin: 0;
+            padding: 0;
+          }
+        }
+        &__input {
+          width: 100%;
+          height: 30px;
+          font-size: 18px;
+          border: none;
+          border-bottom: 1px solid #000000;
+          &_error {
+            border-bottom: 2px solid #ff4757;
+          }
+        }
+      }
+      .wrapper-plan {
+        width: 100%;
+        display: flex;
+        @include flexbox-setting(column, center, center);
+        @include tablet {
+          flex-direction: row;
+          justify-content: space-around;
+        }
+        &__label {
+          width: 150px;
+          margin-top: 10%;
+          text-align: center;
+          @include tablet {
+            margin-top: 3%;
+          }
+          @include desktop {
+            width: 180px;
+          }
+        }
+        &__img {
+          margin-bottom: 4%;
+        }
+        &__text {
+          font-size: 18px;
+          font-family: $second-font;
+        }
+      }
+      &__label {
+        width: 100%;
+        font-family: $second-font;
+        margin: 10% 0;
+        font-size: 24px;
+        text-align: center;
+        @include phone {
+          width: 500px;
+        }
+        @include tablet {
+          margin: 8% auto;
+        }
+      }
+      &__select {
+        width: 100%;
+        height: 30px;
+      }
+      &__submit {
+        @extend %button-setting;
+        padding: 10px 40px;
+        border: 2px solid #000000;
+        font-family: $second_font;
+        font-size: 16px;
+        margin-bottom: 10%;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        &:hover {
+          cursor: pointer;
+          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+            0 10px 10px rgba(0, 0, 0, 0.22);
+        }
+        @include tablet {
+          font-size: 18px;
+          margin-bottom: 8% auto;
+        }
+      }
+    }
+  }
+  .section-result {
+    @extend %box-setting;
+    @include flexbox-setting(column, flex-start, flex-start);
+    font-family: $second-font;
+    @include tablet {
+      align-items: center;
+      justify-content: center;
+    }
+    &__heading {
+      @extend %heading-setting;
+    }
+    &__text {
+      width: 100%;
+      text-align: center;
+      font-size: 20px;
+      @include phone {
+        font-size: 25px;
+      }
+      @include tablet {
+        font-size: 28px;
+      }
+      @include desktop {
+        text-align: left;
+      }
+    }
+    &__value {
+      width: 100%;
+      text-align: center;
+      font-size: 25px;
+      margin-bottom: 3%;
+      color: #5d79ba;
+      &:nth-child(7) {
+        color: #dc166d;
+      }
+      @include phone {
+        font-size: 28px;
+      }
+      @include tablet {
+        font-size: 31px;
+      }
+      @include desktop {
+        text-align: left;
+        margin-left: 5%;
+      }
+    }
+    .list {
+      width: 100%;
+      display: flex;
+      @include flexbox-setting(column, center, center);
+      list-style-type: none;
+      margin-bottom: 50px;
+      @include tablet {
+        flex-direction: row;
+        justify-content: space-around;
+      }
+      @include desktop {
+        justify-content: center;
+        align-items: center;
+      }
+      &__item {
+        width: 100px;
+        margin-top: 10%;
+        @include phone {
+          width: 120px;
+        }
+        @include tablet {
+          margin-top: 5%;
+        }
+        @include desktop {
+          margin-left: 10%;
+          margin-right: 10%;
+        }
+      }
+      &__img {
+        margin-bottom: 8%;
+      }
+      &__text {
+        text-align: center;
+        font-size: 25px;
+      }
+      &__value {
+        text-align: center;
+        font-size: 25px;
+        margin-left: 5px;
+      }
+    }
+  }
+}

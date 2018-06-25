@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Kalkulator zdrowia</title>
+  <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC&amp;subset=latin-ext" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <main class="main">
+    <header id="section0" class="header show">
+      <h1 class="header__heading">Zadbaj o siebie i o swoje zdrowie</h1>
+      <p class="header__subheading">Kalkulator zdrowia</p>
+      <button id="start" class="header__btn">Zaczynajmy</button>
+    </header>
+    <section id="section1" class="section-first-step hidden">
+      <h2 class="section-first-step__heading">Świetnie. Na samym początku muszę wiedzieć kim jesteś</h2>
+      <div class="wrapper">
+        <button class="button-sex" type="button" value="man">
+          <img src="img/man.svg" alt="">
+          <span class="button-sex__text">Mężczyzną</span>
+        </button>
+        <button class="button-sex" type="button" value="woman">
+          <img src="img/woman.svg" alt="">
+          <span class="button-sex__text">Kobietą</span>
+        </button>
+      </div>
+    </section>
+    <section id="section2" class="section-second-step hidden">
+      <h2 class="section-second-step__heading">Uzupełnij informacje w pustych polach</h2>
+      <form id="form" class="form">
+        <div class="wrapper">
+          <label class="wrapper__label" for="weight">
+            Waga ciała (kg):
+            <input id="weight" class="wrapper__input" type="number" required>
+          </label>
+          <label class="wrapper__label" for="height">
+            Wzrotst (cm):
+            <input id="height" class="wrapper__input" type="number" required>
+          </label>
+          <label class="wrapper__label" for="age">
+            Wiek:
+            <input id="age" class="wrapper__input" type="number" required>
+          </label>
+        </div>
+        <h3 class="section-second-step__subheading">Wybież swój plan</h3>
+        <div class="wrapper-plan">
+          <label for="slim" class="wrapper-plan__label">
+            <input id="slim" class="wrapper-plan__input" type="radio" name="plan" value="slim" required>
+            <img class="wrapper-plan__img" src="img/watermelon.svg" alt="">
+            <span class="wrapper-plan__text">Schudnąć</span>
+          </label>
+          <label for="hold" class="wrapper-plan__label">
+            <input id="hold" class="wrapper-plan__input" type="radio" name="plan" value="hold" required>
+            <img class="wrapper-plan__img" src="img/scale.svg" alt="">
+            <span class="wrapper-plan__text">Utrzymać wagę</span>
+          </label>
+          <label for="gain" class="wrapper-plan__label">
+            <input id="gain" class="wrapper-plan__input" type="radio" name="plan" value="gain" required>
+            <img class="wrapper-plan__img" src="img/hamburger.svg" alt="">
+            <span class="wrapper-plan__text">Przytyć</span>
+          </label>
+        </div>
+        <label for="activity" class="form__label">
+          Jaka jest twoja aktywność ?
+          <select id="activity" class="form__select">
+            <option value="none" selected>brak aktywności (praca siedząca)</option>
+            <option value="low">niska aktywność (praca siedząca i 1-2 treningi w tygodniu)</option>
+            <option value="medium">średnia aktywność (praca siedząca i treningi 3-4 razy w tygodniu)</option>
+            <option value="high">wysoka aktywność (praca fizyczna i 3-4 treningi w tygodniu)</option>
+            <option value="very-high">bardzo wysoka aktywność (zawodowi sportowcy, osoby codziennie trenujące)</option>
+          </select>
+        </label>
+        <button class="form__submit" type="submit">Zobacz wynik</button>
+      </form>
+    </section>
+    <section id="section3" class="section-result hidden">
+      <h2 class="section-result__heading">Twój wynik</h2>
+      <span class="section-result__text">Twoja przemiana materi wynosi:</span>
+      <span id="bmr" class="section-result__value"></span>
+      <span class="section-result__text">Aby <span id="plan"></span> Twoje zapotrzebowanie kaloryczne
+powino wynosić:</span>
+      <span id="cpm" class="section-result__value"></span>
+      <span class="section-result__text">Twoje BMI:</span>
+      <span id="bmi" class="section-result__value"></span>
+      <ul class="list">
+        <li class="list__item">
+          <figure>
+            <img class="list__img" src="img/chicken.svg" alt="">
+            <figcaption class="list__text">Białko:<span id="prot" class="list__value"></span></figcaption>
+          </figure>
+        </li>
+        <li class="list__item">
+          <figure>
+            <img class="list__img" src="img/bread.svg" alt="">
+            <figcaption class="list__text">Węglowodany:<span id="carbo" class="list__value"></span></figcaption>
+          </figure>
+        </li>
+        <li class="list__item">
+          <figure>
+            <img class="list__img" src="img/pizza.svg" alt="">
+            <figcaption class="list__text">Tłuszcze:<span id="fat" class="list__value"></span></figcaption>
+          </figure>
+        </li>
+      </ul>
+    </section>
+  </main>
+  <script src="js/navigation.js"></script>
+  <script src="js/view.js"></script>
+  <script src="js/calculator.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
