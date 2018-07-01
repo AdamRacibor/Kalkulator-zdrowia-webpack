@@ -50,9 +50,9 @@ const calculator = (function(){
     }
   }
 
-  function calcMicro(weight,kcal) {
-    micro.push(weight*2.5*4);
-    micro.push(kcal*0.2);
+  function calcMicro(kcal) {
+    micro.push(kcal*0.15);
+    micro.push(kcal*0.30);
     micro.push(kcal-(micro[0]+micro[1]));
   }
 

@@ -3,6 +3,7 @@ const navigation = (function() {
   const startBtn = document.querySelector("#start");
   const optionsBtn = document.querySelectorAll(".button-sex");
   const form = document.querySelector("#form");
+  const resetBtn = document.querySelector('#reset');
 
   let activeSection = 0;
 
@@ -10,6 +11,9 @@ const navigation = (function() {
     let sections = document.querySelector(`#section${activeSection}`);
     sections.classList.toggle("show");
     sections.classList.toggle("hidden");
+    if(activeSection === 3) {
+      activeSection = 0;
+    }
     activeSection++;
     sections = document.querySelector(`#section${activeSection}`);
     sections.classList.toggle("hidden");
@@ -25,9 +29,11 @@ const navigation = (function() {
     e.preventDefault();
     changeSection();
   });
+  resetBtn.addEventListener('click', changeSection);
 
   return {
     form: form,
-    optionsBtn: optionsBtn
+    optionsBtn: optionsBtn,
+    resetBtn: resetBtn
   }
 })();

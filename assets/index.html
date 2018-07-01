@@ -36,15 +36,15 @@
         <div class="wrapper">
           <label class="wrapper__label" for="weight">
             Waga ciała (kg):
-            <input id="weight" class="wrapper__input" type="number" max="200" required>
+            <input id="weight" class="wrapper__input" type="number" min="1" max="200" required>
           </label>
           <label class="wrapper__label" for="height">
             Wzrost (cm):
-            <input id="height" class="wrapper__input" type="number" max="200" required>
+            <input id="height" class="wrapper__input" type="number" min="1" max="200" required>
           </label>
           <label class="wrapper__label" for="age">
             Wiek:
-            <input id="age" class="wrapper__input" type="number" min="18" max="99" required>
+            <input id="age" class="wrapper__input" type="number" min="1" max="99" required>
           </label>
         </div>
         <h3 class="section-second-step__subheading">Wybież swój plan</h3>
@@ -107,6 +107,7 @@ powino wynosić:</span>
           </figure>
         </li>
       </ul>
+      <button type="button" id="reset" class="section-result__reset">Zacznij od nowa</button>
     </section>
   </main>
   <script src="js/navigation.js"></script>
