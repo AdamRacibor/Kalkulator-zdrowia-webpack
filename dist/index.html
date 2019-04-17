@@ -7,17 +7,16 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Kalkulator zdrowia</title>
   <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC&amp;subset=latin-ext" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-</head>
+<link href="css/style.css" rel="stylesheet"></head>
 
 <body>
   <main class="main">
-    <header id="section0" class="header show">
+    <header class="section-header header show" data-name="header">
       <h1 class="header__heading">Zadbaj o siebie i o swoje zdrowie</h1>
       <p class="header__subheading">Kalkulator zdrowia</p>
       <button id="start" class="header__btn">Zaczynajmy</button>
     </header>
-    <section id="section1" class="section-first-step hidden">
+    <section class="section-first-step hidden" data-name="first-step">
       <h2 class="section-first-step__heading">Świetnie. Na samym początku muszę wiedzieć kim jesteś</h2>
       <div class="wrapper">
         <button class="button-sex" type="button" value="man">
@@ -30,7 +29,7 @@
         </button>
       </div>
     </section>
-    <section id="section2" class="section-second-step hidden">
+    <section class="section-second-step hidden" data-name="second-step">
       <h2 class="section-second-step__heading">Uzupełnij informacje w pustych polach</h2>
       <form id="form" class="form">
         <div class="wrapper">
@@ -78,7 +77,7 @@
         <button class="form__submit" type="submit">Zobacz wynik</button>
       </form>
     </section>
-    <section id="section3" class="section-result hidden">
+    <section class="section-result hidden" data-name="result">
       <h2 class="section-result__heading">Twój wynik</h2>
       <span class="section-result__text">Twoja przemiana materi wynosi:</span>
       <span id="bmr" class="section-result__value"></span>
@@ -110,9 +109,5 @@ powino wynosić:</span>
       <button type="button" id="reset" class="section-result__reset">Zacznij od nowa</button>
     </section>
   </main>
-  <script src="js/navigation.js"></script>
-  <script src="js/view.js"></script>
-  <script src="js/calculator.js"></script>
-  <script src="js/app.js"></script>
-</body>
+<script type="text/javascript" src="js/bundle.js"></script></body>
 </html>
