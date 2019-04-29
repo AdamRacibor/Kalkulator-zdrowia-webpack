@@ -13,5 +13,6 @@ export const elements = {
     bmi: document.querySelector('#bmi'),
     prot: document.querySelector('#prot'),
     carbo: document.querySelector('#carbo'),
-    fat: document.querySelector('#fat')
+    fat: document.querySelector('#fat'),
+    reset: document.querySelector('#reset')
 };

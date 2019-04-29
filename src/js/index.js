@@ -51,3 +51,7 @@ elements.form.addEventListener('submit', (e) => {
     navigationView.moveToSection('second-step', 'result');
     resultView.createResult(status.person);
 });
+
+elements.reset.addEventListener('click', () => {
+    window.location.reload(true);
+});
