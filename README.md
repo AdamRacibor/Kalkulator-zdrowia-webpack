@@ -16,6 +16,6 @@ Kalkulator zdrowia służy wyłącznie do obliczania dla użytkownika takich inf
  - Chai (4.2.0)
  - Adobe XD oraz Illustrator
  
- Poprzednią wersje tego projektu znajdziesz tutaj: [https://github.com/Danroxx/Kalkulator-zdrowia](https://github.com/Danroxx/Kalkulator-zdrowia)
+ Poprzednią wersje tego projektu znajdziesz tutaj: [https://github.com/AdamRacibor/Kalkulator-zdrowia](https://github.com/AdamRacibor/Kalkulator-zdrowia)
  
- Obecna wersja LIVE: [https://danroxx.github.io/Kalkulator-zdrowia-webpack/dist/](https://danroxx.github.io/Kalkulator-zdrowia-webpack/dist/)
+ Obecna wersja LIVE: [https://adamracibor.github.io/Kalkulator-zdrowia-webpack/dist/](https://adamracibor.github.io/Kalkulator-zdrowia-webpack/dist/)
