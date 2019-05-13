@@ -25,7 +25,7 @@ Kalkulator zdrowia służy wyłącznie do obliczania dla użytkownika takich inf
 
 This application is only used to calculate calorie, BMI and BMR. All formulas and information I found on the internet
 
-**The final calculations are not 100% accurate and they don't replace specialist advice**
+**The final calculations aren't 100% accurate and they don't replace specialist advice**
 
 ## Technologies:
 
