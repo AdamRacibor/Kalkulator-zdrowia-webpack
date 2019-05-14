@@ -30,13 +30,13 @@ export default class Person {
     changePlanName() {
         switch (this.plan) {
             case 'slim':
-                this.plan = "Schudnąć";
+                this.plan = "schudnąć";
                 break;
             case 'hold':
-                this.plan = "Utrzymać";
+                this.plan = "utrzymać wagę";
                 break;
             case 'gain':
-                this.plan = "Przytyć";
+                this.plan = "przytyć";
                 break;
         }
     }

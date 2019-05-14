@@ -47,6 +47,7 @@ elements.form.addEventListener('submit', (e) => {
     status.person.addTarget(status.calculator.calculatePlan());
     status.person.addMicro(status.calculator.calculateMicro());
     status.person.addBMI(status.calculator.calculateBMI());
+    status.person.changePlanName();
 
     navigationView.moveToSection('second-step', 'result');
     resultView.createResult(status.person);
