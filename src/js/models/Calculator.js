@@ -50,13 +50,13 @@ export default class Calculator {
 
     calculateMicro() {
         this.protein = Math.floor(this.target * 0.15);
-        this.carbohydrates = Math.floor(this.target * 0.30);
-        this.fats = Math.floor(this.target - (this.protein + this.carbohydrates));
+        this.carbohydrates = Math.floor(this.target * 0.55);
+        this.fats = Math.floor(this.target*0.30);
 
         return {
-            protein: this.protein,
-            carbohydrates: this.carbohydrates,
-            fats: this.fats
+            protein: Math.floor(this.protein/4),
+            carbohydrates: Math.floor(this.carbohydrates/4),
+            fats: Math.floor(this.fats/9)
         };
     }
 
