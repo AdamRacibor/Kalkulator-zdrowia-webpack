@@ -48,7 +48,6 @@ elements.form.addEventListener('submit', (e) => {
     status.person.addMicro(status.calculator.calculateMicro());
     status.person.addBMI(status.calculator.calculateBMI());
     status.person.changePlanName();
-    console.log(status.person.plan);
 
     navigationView.moveToSection('second-step', 'result');
     resultView.createResult(status.person);
