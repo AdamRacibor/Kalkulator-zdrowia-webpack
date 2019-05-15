@@ -31,6 +31,7 @@ elements.form.addEventListener('submit', (e) => {
     const height = elements.height.value;
     const age = elements.age.value;
     const activity = elements.activity.value;
+    console.log(activity);
     let plan;
 
     elements.planRadio.forEach(el => {
@@ -48,6 +49,7 @@ elements.form.addEventListener('submit', (e) => {
     status.person.addMicro(status.calculator.calculateMicro());
     status.person.addBMI(status.calculator.calculateBMI());
     status.person.changePlanName();
+    console.log(status);
 
     navigationView.moveToSection('second-step', 'result');
     resultView.createResult(status.person);
